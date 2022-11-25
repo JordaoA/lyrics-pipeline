@@ -5,7 +5,7 @@ import lyricsgenius
 config = open('../../config.json', 'r+')
 config_json = json.load(config)
 
-#Client access token
+# Client access token
 token = config_json.get('client_access_token')
 
 genius = lyricsgenius.Genius(token)
@@ -15,7 +15,6 @@ albuns = config_json.get('albuns')
 artist = config_json.get('artist')
 
 format_albuns = []
-
 
 # format names
 for album in albuns:
@@ -27,12 +26,10 @@ for album in albuns:
     
     format_albuns.append(formated_title)
 
-
 # extract and save lyrics
 for album in albuns:
     album_ = genius.search_album(album, artist)
     album_.save_lyrics()
-
 
 # saving formated titles
 formated_albuns = {'format_albuns': format_albuns}
