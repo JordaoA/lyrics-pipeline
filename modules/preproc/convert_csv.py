@@ -1,4 +1,8 @@
 import json
 import pandas as pd
 
-# config_json = json.load()
+albuns = open('./albuns.json', 'r+')
+
+albuns_json = json.load(albuns)
+
+albuns_json.get("format_albuns")
