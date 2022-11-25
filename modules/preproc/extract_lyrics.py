@@ -1,5 +1,5 @@
+import os
 import json
-import shutil
 import lyricsgenius
 
 config = open('../../config.json', 'r+')
@@ -33,15 +33,12 @@ for album in albuns:
     album_ = genius.search_album(album, artist)
     album_.save_lyrics()
 
-# move files
-for album in format_albuns:
-    original = f'/home/jordaoa/Documentos/nlp_project/modules/preproc/Lyrics_{album}.json'
-    target = f'/home/jordaoa/Documentos/nlp_project/data/json/Lyrics_{album}.json'
-    shutil.move(original, target)
-
-
-formated_albuns = {'format_albuns': format_albuns}
 
 # saving formated titles
+formated_albuns = {'format_albuns': format_albuns}
+
 formated_ = open('albuns.json', 'w')
 json.dump(formated_albuns, formated_)
+
+# moving json files
+os.system("mv Lyrics_* ../../data/json/")
