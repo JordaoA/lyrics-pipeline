@@ -1,0 +1,11 @@
+{
+    "client_access_token": "PUT_YOUR_KEY_HERE",
+    "artist": "Racionais mcs",
+    "albuns":[ 
+        "Holocausto Urbano",
+        "Raio X do Brasil",
+        "Sobrevivendo no Inferno", 
+        "Nada Como Um Dia Após o Outro Dia (Disco 1: Chora Agora)",
+        "Nada Como Um Dia Após o Outro Dia (Disco 2: Ri Depois)"
+        ]
+}
