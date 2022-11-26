@@ -5,4 +5,6 @@ extractor = Extract_lyrics()
 extractor.save_lyrics()
 
 converter = Csv_converter()
-all_lyrics = converter.converter()
+converter.converter()
+converter.make_csv()
+

@@ -30,8 +30,25 @@ class Csv_converter():
             for track in tracks:
                 
                 if albuns_dict.get(album):
-                    albuns_dict[album].append(track.get('song').get("lyrics")) 
+                    albuns_dict[album][1].append(track.get('song').get("lyrics")) 
                 else:
-                    albuns_dict[album] = [track.get('song').get("lyrics")]
+                    albuns_dict[album] = (album,[track.get('song').get("lyrics")])
 
-        return albuns_dict
+        self.albuns_dict = albuns_dict
+
+    def make_csv(self):
+
+        albuns = self.albuns_dict
+
+        df_album_dict = {'album':[],
+                         'lyric':[]}
+
+        for album_id in albuns:
+            for lyric in albuns[album_id]:
+                df_album_dict['album'].append(album_id)
+                df_album_dict['lyric'].append(lyric)
+        
+        df_albuns = pd.DataFrame.from_dict(df_album_dict)
+
+        df_albuns.to_csv('./data/csv/Lyrics.csv')
+        
