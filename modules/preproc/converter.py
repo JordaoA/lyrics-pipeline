@@ -41,7 +41,7 @@ class Csv_converter():
         albuns = self.albuns_dict
 
         df_album_dict = {'album':[],
-                         'lyric':[]}
+                         'lyric':[],}
 
         for album_id in albuns:
             for lyric in albuns[album_id]:
