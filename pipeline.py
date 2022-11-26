@@ -1,7 +1,6 @@
 from modules.preproc.converter import Csv_converter
 from modules.preproc.extract_lyrics import Extract_lyrics
 
-
 class LyricsPipeline():
 
     def run(self):
