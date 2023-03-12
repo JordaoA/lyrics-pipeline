@@ -2,3 +2,4 @@ albuns.json
 data/csv/Lyrics*
 data/json/Lyrics_*
 modules/preproc/__pycache__
+venv
